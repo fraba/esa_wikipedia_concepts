@@ -3,9 +3,9 @@ title: "Explicit semantic analysis with R"
 author: Francesco Bailo
 date: "21 February 2016"
 output:
-  html_document:
+  md_document:
     toc: true
-    theme: united
+    variant: markdown_github
 bibliography: bibliography.bib
 ---
 
