@@ -4,8 +4,9 @@ author: Francesco Bailo
 date: "21 February 2016"
 output:
   html_document:
-    toc: true
+    self_contained: no
     theme: united
+    toc: yes
 bibliography: bibliography.bib
 ---
 
@@ -155,7 +156,7 @@ g_ns0_and_ns14 <- g - V(g)[!(V(g)$namespace %in% c(0, 14))]
 
 This will result in a directed network like this
 
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
+```{r, echo = FALSE, warning=FALSE, message=FALSE, fig.path='Figs/'}
 require(igraph)
 colors <- c('Category page' = 'blue',
             'Article page' = 'red')
@@ -549,7 +550,7 @@ fit <- tsne(cosine_dist_mat, max_iter = 1000)
 
 This is the result rendered with `ggplot2`:
 
-```{r, echo = FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=9}
+```{r, echo = FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=9, fig.path='Figs/'}
 theme_set(theme_bw() + 
              theme(text=element_text(family="Palatino", size=10)) +
             theme(
