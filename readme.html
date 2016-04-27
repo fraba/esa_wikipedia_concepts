@@ -11,7 +11,7 @@
 
 <meta name="author" content="Francesco Bailo" />
 
-<meta name="date" content="2016-02-21" />
+<meta name="date" content="2016-04-11" />
 
 <title>Explicit semantic analysis with R</title>
 
@@ -113,7 +113,7 @@ $(document).ready(function () {
 
 <h1 class="title">Explicit semantic analysis with R</h1>
 <h4 class="author"><em>Francesco Bailo</em></h4>
-<h4 class="date"><em>21 February 2016</em></h4>
+<h4 class="date"><em>11 April 2016</em></h4>
 
 </div>
 
@@ -221,7 +221,7 @@ g &lt;- graph.data.frame(categorylinks[,.(cl_from_id, cl_to_id)],
                       vertices = vertices_categorylinks)
 g_ns0_and_ns14 &lt;- g - V(g)[!(V(g)$namespace %in% c(0, 14))]  </code></pre>
 <p>This will result in a directed network like this</p>
-<p><img src="Figs/unnamed-chunk-1-1.png" title="" alt="" width="672" /></p>
+<p><img src="Figs/graph-wikipedia-category-and-article-1.png" title="" alt="" width="672" /></p>
 <p>By construction – since every link describes the relation between a page and a parent category – article pages have no incoming links, while category pages might have both incoming from <em>subcategories</em> and outgoing links to parent categories. To simplify the plot online five nodes have two <em>outgoing</em>, but this is mostly the case since most of both article and category pages have more than one <em>parent</em> category.</p>
 <p>If we subset this network removing every article page we obtain a network describing the hierarchy among Wikipedia categories.</p>
 <pre class="r"><code>g_ns14 &lt;- g_ns0_and_ns14 - V(g_ns0_and_ns14)[!(V(g_ns0_and_ns14)$namespace %in% c(14))]</code></pre>
@@ -444,7 +444,7 @@ cosine_dist_mat &lt;-
 <pre class="r"><code>require(tsne)
 fit &lt;- tsne(cosine_dist_mat, max_iter = 1000)</code></pre>
 <p>This is the result rendered with <code>ggplot2</code>:</p>
-<p><img src="Figs/unnamed-chunk-2-1.png" title="" alt="" width="576" /></p>
+<p><img src="Figs/tsne-cosine-distance-m5s-gmi-discussion-1.png" title="" alt="" width="576" /></p>
 <p>The figure is part of my research on online deliberation and the Italy’s <a href="https://en.wikipedia.org/wiki/Five_Star_Movement">Five Star Movement (M5S)</a>. In the figures (top panel) I color coded the document based on five macro concepts — which were used to identify each document — and identified the bill that was presented in Parliament (also a document in my corpus) with a triangle. In the second row of plots from the top I map the 2D kernel density of documents belonging to each macro concept, in the third and fourth row the temporal evolution of the discussion on two platforms (a forum and a blog).</p>
 </div>
 <div id="references-and-r-packages" class="section level1 unnumbered">

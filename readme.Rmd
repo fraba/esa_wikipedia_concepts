@@ -1,7 +1,7 @@
 ---
 title: "Explicit semantic analysis with R"
 author: Francesco Bailo
-date: "21 February 2016"
+date: "11 April 2016"
 output:
   html_document:
     self_contained: no
@@ -156,7 +156,7 @@ g_ns0_and_ns14 <- g - V(g)[!(V(g)$namespace %in% c(0, 14))]
 
 This will result in a directed network like this
 
-```{r, echo = FALSE, warning=FALSE, message=FALSE, fig.path='Figs/'}
+```{r graph-wikipedia-category-and-article, echo = FALSE, warning=FALSE, message=FALSE, fig.path='Figs/'}
 require(igraph)
 colors <- c('Category page' = 'blue',
             'Article page' = 'red')
@@ -550,7 +550,7 @@ fit <- tsne(cosine_dist_mat, max_iter = 1000)
 
 This is the result rendered with `ggplot2`:
 
-```{r, echo = FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=9, fig.path='Figs/'}
+```{r tsne-cosine-distance-m5s-gmi-discussion, echo = FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=9, fig.path='Figs/'}
 theme_set(theme_bw() + 
              theme(text=element_text(family="Palatino", size=10)) +
             theme(
